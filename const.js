@@ -1,7 +1,7 @@
 import { Pokemon } from './classes.js';
+const card = document.querySelector('.card');
+const cardList = document.querySelector('.card-list');
 export const fillPokemonCard = (pokemon) => {
-    const card = document.querySelector('.card');
-    const cardList = document.querySelector('.card-list');
 
     const cloneCard = card.cloneNode(true);
     const title = cloneCard.querySelector('h3');
