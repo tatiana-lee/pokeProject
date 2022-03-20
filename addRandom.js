@@ -4,15 +4,12 @@ const btn = document.querySelector('#add');
 const cardList = document.querySelector('.card-list')
 
 btn.addEventListener('click', async (event) => {
-    event.preventDefault();
     const randomId = Math.floor(Math.random() * 100);
     try {
         const pokemon = await getPokemonByNameOrId(randomId);
         fillPokemonCard(pokemon);
         const pokeList = JSON.stringify(cardList.innerHTML)
-        console.log(pokeList)
         localStorage.setItem('newPokes', JSON.parse(pokeList))  
-        
     } catch (error) {
         alert(error.message);
     }
@@ -40,5 +37,3 @@ btn.addEventListener('click', async (event) => {
 });
 
 cardList.innerHTML = localStorage.getItem('newPokes')
-
-
